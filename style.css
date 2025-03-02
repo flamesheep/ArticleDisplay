@@ -1,0 +1,116 @@
+body{
+    font: 15px;
+    font-family: 'Arial', Helvetica,sans-serif;
+    padding:0 5%;
+    background-color:#3c3c3c;
+    height: 100%;
+    max-width: 100%;
+}
+/* 整個滾動條的容器 */
+::-webkit-scrollbar {
+    width: 10px; /* 垂直滾動條的寬度 */
+}
+/* 滾動條的軌道（背景） */
+::-webkit-scrollbar-track {
+    background: #303030; /* 軌道背景顏色 */
+    border-radius: 10px; /* 圓角 */
+}
+/* 滾動條的滑塊（可拖動的部分） */
+::-webkit-scrollbar-thumb {
+    background: #888; /* 滑塊顏色 */
+    border-radius: 10px; /* 圓角 */
+}
+/* 滑塊懸停時的樣式 */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 滑塊懸停顏色 */
+}
+
+header{
+    color: #dddddd;
+    font-size: 30px;
+}
+a {
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+}
+/*article*/
+.article{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 50px 20px;
+    justify-content: space-between;
+}
+.article-BG{
+    vertical-align: top;
+    position: relative; /* 讓覆蓋層可以定位在內部 */
+    height: 90%;
+    background-color: #4d4d4d;
+    padding: 1em;
+    border-radius: 5px;
+}
+button{
+    background-color: #00000000;
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+.article-title{
+    color: #cccccc;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 28px;
+    font-weight: 800;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+.article-title:hover{
+    color: #bbbbbb;
+}
+.tag{
+    background-color: rgba(125, 171, 231, 0.5);
+    display: inline;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.r18{
+    background-color: rgba(220, 94, 94, 0.5);
+    display: inline;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.item{
+    background-color: rgba(193, 193, 69, 0.5);
+    display: inline;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+.date{
+    color:#cccccc;
+}
+.list {
+    width: 250px;
+    height: 50px;
+    padding-left: 12px;
+    left: 30%;
+    background-color: #77777777;
+    color: white;
+    border: none;
+    font-size: x-large;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1080 !important;
+    position: fixed;
+}
