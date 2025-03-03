@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileName = urlParams.get('file');
   
     if (fileName) {
-      const jsonUrl = `${window.location.origin}/Articles/${fileName}`;
+      const jsonUrl = `../Articles/${fileName}`;
   
       fetch(jsonUrl)
         .then(response => {
