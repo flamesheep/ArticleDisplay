@@ -25,6 +25,7 @@ body{
     background: #555; /* 滑塊懸停顏色 */
 }
 
+/*global*/
 header{
     color: #dddddd;
     font-size: 30px;
@@ -32,9 +33,33 @@ header{
 a {
     text-decoration: none;
 }
-a:visited{
+a:visited, a:-webkit-any-link {
     color: inherit;
 }
+.list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    position: fixed;
+    left: 30%;
+    z-index: 1080 !important;
+}
+.list-button {
+    display: inline;
+    width: 150px;
+    height: 50px;
+    background-color: #7899c977;
+    border-radius: 10px;
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    cursor: pointer;
+}
+.list-button:hover {
+    background-color: #617da777;
+    color: rgb(225, 225, 225);
+}
+
 /*article*/
 .article{
     max-width: 100%;
@@ -100,20 +125,6 @@ button{
 .date{
     color:#cccccc;
 }
-.list {
-    width: 250px;
-    height: 50px;
-    padding-left: 12px;
-    left: 30%;
-    background-color: #77777777;
-    color: white;
-    border: none;
-    font-size: x-large;
-    text-align: center;
-    cursor: pointer;
-    z-index: 1080 !important;
-    position: fixed;
-}
 
 /*RWD*/
 @media screen and (max-width: 1200px){
@@ -137,4 +148,20 @@ button{
     .tag, .item, .r18{
         font-size: 12px;
     }
+}
+
+/*委託頁*/
+.com-content{
+    margin-left: 100px;
+    color:#dddddd;
+    font-size: 18px;
+    
+}
+.com-content h3{
+    display: inline;
+    padding: 7px;
+    font-size: 24px;
+    background-color: #10233f7c;
+    border-radius: 5px;
+    color: #dddddd;
 }
