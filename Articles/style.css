@@ -1,3 +1,7 @@
+html{
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 body{
     font-size: 18px;
@@ -79,4 +83,22 @@ h1{
 }
 .home:hover .text{
     opacity: 1;
+}
+
+/*RWD*/
+@media screen and (max-width: 700px){
+    .content{
+        padding: 5px 15%;
+    }
+    .home{
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    .text{
+        font-size: 12px;
+    }
+    .home:hover {
+        width: auto;
+    }
 }
