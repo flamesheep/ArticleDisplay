@@ -1,10 +1,24 @@
 body{
     font: 15px;
     font-family: 'Arial', Helvetica,sans-serif;
-    padding:0 5%;
+    padding:5% 5%;
     background-color:#3c3c3c;
     height: 100%;
     max-width: 100%;
+}
+body::before {
+    content: '';
+    position: fixed;
+    background-image: url('img/commission.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+    width: 90vw;
+    height: 20vh;
+    top: -1%;
+    left: 5vw;
 }
 /* 整個滾動條的容器 */
 ::-webkit-scrollbar {
@@ -37,23 +51,23 @@ a:visited, a:-webkit-any-link {
     color: inherit;
 }
 .list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    position: fixed;
-    left: 30%;
-    z-index: 1080 !important;
+    display: flex;
+    position: absolute;
+    padding-top: 3%;
+    right: 5%;
 }
 .list-button {
     display: inline;
     width: 150px;
     height: 50px;
     background-color: #7899c977;
+    border: none;
     border-radius: 10px;
     color: white;
     font-size: x-large;
     text-align: center;
     cursor: pointer;
+    margin:0 5px;
 }
 .list-button:hover {
     background-color: #617da777;
@@ -72,16 +86,9 @@ a:visited, a:-webkit-any-link {
     vertical-align: top;
     position: relative; /* 讓覆蓋層可以定位在內部 */
     height: 90%;
-    background-color: #4d4d4d;
+    background-color: hsla(0, 0%, 30%, 0.8);
     padding: 1em;
     border-radius: 5px;
-}
-button{
-    background-color: #00000000;
-    border: none;
-    padding: 0;
-    margin: 0;
-    display: block;
 }
 .article-title{
     color: #cccccc;
@@ -131,6 +138,9 @@ button{
     header{
         font-size: 28px;
     }
+    body::before{
+        top:-2%;
+    }
     .article{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -140,7 +150,10 @@ button{
 }
 @media screen and (max-width: 700px) {
     header, .article-title{
-        font-size: 24px;
+        font-size: 20px;
+    }
+    body::before{
+        top:-5%;
     }
     .article{
         grid-template-columns: repeat(2, 1fr);
@@ -148,15 +161,27 @@ button{
     .tag, .item, .r18{
         font-size: 12px;
     }
+    .list-button {
+        width: 100px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 400px) {
+    body::before{
+        top:-7%;
+    }
+    .list-button {
+        width: 80px;
+        height: 30px;
+        font-size: 14px;
+    }
+    header {
+        font-size: 15px;
+    }
 }
 
 /*委託頁*/
-.com-content{
-    margin-left: 100px;
-    color:#dddddd;
-    font-size: 18px;
-    
-}
 .com-content h3{
     display: inline;
     padding: 7px;
@@ -164,4 +189,12 @@ button{
     background-color: #10233f7c;
     border-radius: 5px;
     color: #dddddd;
+}
+.com-content{
+    margin-left: 5%;
+    color:#dddddd;
+    font-size: 18px;
+}
+.warn {
+    color: red;
 }
