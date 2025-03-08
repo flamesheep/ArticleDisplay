@@ -225,7 +225,7 @@ ul {
 .container {
     position: relative;
     width: 100%;
-    max-width: 45vw;
+    max-width: 700px;
     overflow: hidden;
     max-height: auto;
     display: flex;
@@ -295,11 +295,12 @@ td {
         width: 100%;
     }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 768px) {
     .container {
         max-width: 100%;
-    }
-    .container-item, .containerCtrl {
-        scale: 0.8;
-    }
+      }    
+      .container-item {
+        padding: 0 1px;
+        overflow-wrap: anywhere; 
+      }
 }
