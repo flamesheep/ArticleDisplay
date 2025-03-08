@@ -295,3 +295,11 @@ td {
         width: 100%;
     }
 }
+@media screen and (max-width: 360px) {
+    .container {
+        max-width: 100%;
+    }
+    .container-item, .containerCtrl {
+        scale: 0.8;
+    }
+}
