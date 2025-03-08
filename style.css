@@ -26,6 +26,11 @@ header{
 a {
     text-decoration: none;
 }
+.example {
+    text-decoration: underline; 
+    font-weight: bold;
+    color: #3180ca !important;
+}
 a:visited, a:-webkit-any-link {
     color: inherit;
 }
@@ -98,35 +103,40 @@ footer {
 }
 .tag{
     background-color: rgba(125, 171, 231, 0.5);
-    display: inline;
+    display: inline-block;
     font-size: 16px;
     color: #ffffff;
     padding: 2px 5px;
     border-radius: 5px;
     white-space: nowrap;
+    line-height: 1;
+    margin-bottom: 1%;
 }
 .r18{
     background-color: rgba(220, 94, 94, 0.5);
-    display: inline;
+    display: inline-flex;
     font-size: 16px;
     color: white;
     padding: 2px 5px;
     border-radius: 5px;
     white-space: nowrap;
     font-weight: bold;
+    line-height: 1;
+    margin-bottom: 1%;
 }
 .item{
     background-color: rgba(193, 193, 69, 0.5);
-    display: inline;
+    display: inline-flex;
     font-size: 16px;
     color: white;
     padding: 2px 5px;
     border-radius: 5px;
     white-space: nowrap;
+    line-height: 1;
+    margin-bottom: 1%;
 }
 .date{
-    display: inline-block;
-    margin-top: 5px;
+    display: inline-flex;
     color:#cccccc;
 }
 
@@ -201,9 +211,6 @@ footer {
 ul {
     list-style: none;
 }
-li {
-    margin-top: 5px;
-}
 .advice {
     background-color: #1777d180;
     border-radius: 2px;
@@ -221,6 +228,10 @@ li {
     max-width: 45vw;
     overflow: hidden;
     max-height: auto;
+    display: flex;
+    flex-direction: column; /* 垂直排列內容和按鈕 */
+    align-items: center;
+    padding-bottom: 40px;
 }
   /* 由 JS 動態建立的 slider-wrapper：水平排列所有 slide */
 .slider-wrapper {
@@ -233,15 +244,14 @@ li {
 }
 .containerCtrl {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #ffffff;
+    bottom: 50px;                /* 將按鈕對齊容器底部 */
+    transform: translateY(100%); /* 將按鈕移出容器外部 */
     background-color: #262626;
+    color: #ffffff;
     border: none;
-    padding: 10px 10px;
+    padding: 10px;
     cursor: pointer;
     font-size: 18px;
-    z-index: 5;
 }
 .containerCtrl:hover {
     background-color: #000000;
@@ -252,7 +262,7 @@ li {
 .containerCtrl.next {
     right: 10px;
 }
-  /*排程*/
+  /*排程表格*/
 table {
     width: 50%;
     margin: 10px;
@@ -281,9 +291,6 @@ td {
 }
 /*RWD2*/
 @media screen and (max-width: 1024px) {
-    .container {
-        max-width: 80vw;
-    }
     table {
         width: 100%;
     }
