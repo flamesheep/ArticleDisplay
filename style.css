@@ -64,7 +64,7 @@ a:visited, a:-webkit-any-link {
 footer {
     text-align: center;
     color: white;
-    font-size: 14;
+    scale: 0.8;
 }
 @font-face {
     font-family: 'Iansui';

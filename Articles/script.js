@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const homeButton = document.querySelector('button.home'); // 獲取按鈕
   
           if (header) header.textContent = data.title || '未找到標題';
+          document.title = (data.title ? data.title + ' - Flamesheep' : '未找到標題');
           if (tag) tag.textContent = data.tag || '未找到標籤';
   
           if (contentContainer) {
