@@ -10,65 +10,61 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// 目錄
+document.addEventListener("DOMContentLoaded", function() {
+  const articleContainer = document.querySelector('.article');
+  // 清空 .article 容器
+  articleContainer.innerHTML = '';
+  fetch('catalog.json')
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(article => {
+        const articleDiv = document.createElement('div');
+        articleDiv.classList.add('article-BG');     
+        // 標題
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('article-title');
+        titleDiv.textContent = article.title;
+        // R18、item、tags
+        const additionalInfoDiv = document.createElement('div');
+        additionalInfoDiv.classList.add('additional-info');
+        // 如果是 R18，顯示 R18 標籤
+        if (article.r18) {
+          const r18Span = document.createElement('span');
+          r18Span.classList.add('r18');
+          r18Span.textContent = 'R18';
+          additionalInfoDiv.appendChild(r18Span);
+          additionalInfoDiv.appendChild(document.createTextNode(' ')); // 保留空格
+        }
 
-const container = document.querySelector('.container');
-const nextBtn = container.querySelector('.containerCtrl.next');
-const prevBtn = container.querySelector('.containerCtrl.prev');
-const originalItems = container.querySelectorAll('.container-item');
+        const itemSpan = document.createElement('span');
+        itemSpan.classList.add('item');
+        itemSpan.textContent = article.item;
+        additionalInfoDiv.appendChild(itemSpan);
+        // 添加空格
+        additionalInfoDiv.appendChild(document.createTextNode(' '));
+        // 顯示 tags
+        article.tags.forEach((tag, index) => {
+          const tagSpan = document.createElement('span');
+          tagSpan.classList.add('tag');
+          tagSpan.textContent = tag;
+          additionalInfoDiv.appendChild(tagSpan);
+          // 如果不是最後一個 tag，則添加空格
+          if (index < article.tags.length - 1) {
+            additionalInfoDiv.appendChild(document.createTextNode(' '));
+          }
+        });
+        // 日期
+        const dateSpan = document.createElement('span');
+        dateSpan.classList.add('date');
+        dateSpan.textContent = article.date;
 
-const sliderWrapper = document.createElement('div');
-sliderWrapper.className = 'slider-wrapper';
-originalItems.forEach(item => sliderWrapper.appendChild(item));
-container.insertBefore(sliderWrapper, container.firstChild);
-
-const items = sliderWrapper.querySelectorAll('.container-item');
-const totalItems = items.length;
-let currentIndex = 0;
-
-// 初始化：複製第一個與最後一個 slide
-function setupSlider() {
-  const firstClone = items[0].cloneNode(true);
-  const lastClone = items[totalItems - 1].cloneNode(true);
-  sliderWrapper.appendChild(firstClone);
-  sliderWrapper.insertBefore(lastClone, sliderWrapper.firstChild);
-  sliderWrapper.style.transform = `translateX(-100%)`;
-}
-
-// 處理滑動動畫
-function slideTo(index) {
-  sliderWrapper.style.transform = `translateX(-${(index + 1) * 100}%)`;
-}
-
-// 處理過渡結束事件
-function handleTransitionEnd(resetIndex) {
-  sliderWrapper.style.transition = 'none';
-  currentIndex = resetIndex;
-  slideTo(currentIndex);
-  sliderWrapper.offsetWidth; // 強制 reflow
-  sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
-}
-
-// 往下一個
-function moveToNext() {
-  currentIndex++;
-  slideTo(currentIndex);
-  if (currentIndex === totalItems) {
-    sliderWrapper.addEventListener('transitionend', () => handleTransitionEnd(0), { once: true });
-  }
-}
-
-// 往上一個
-function moveToPrev() {
-  currentIndex--;
-  slideTo(currentIndex);
-  if (currentIndex === -1) {
-    sliderWrapper.addEventListener('transitionend', () => handleTransitionEnd(totalItems - 1), { once: true });
-  }
-}
-
-// 綁定按鈕事件
-nextBtn.addEventListener('click', moveToNext);
-prevBtn.addEventListener('click', moveToPrev);
-
-// 初始化
-setupSlider();
+        // 將所有元素加入到 articleDiv
+        articleDiv.appendChild(titleDiv);
+        articleDiv.appendChild(additionalInfoDiv);
+        articleDiv.appendChild(dateSpan);
+        articleContainer.appendChild(articleDiv);
+      });
+    })
+    .catch(error => console.error('Error loading the articles:', error));
+});
