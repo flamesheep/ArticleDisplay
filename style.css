@@ -1,303 +1,85 @@
-html {
-    height: 100%;
-}
-body{
-    font-family:'Arial', Helvetica,sans-serif;
-    background-color:#3c3c3c;
-    max-width: 100%;
-}
-::-webkit-scrollbar {/*整個滾動條容器*/
-    width: 10px;}
-::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
-    border-radius: 10px;}
-::-webkit-scrollbar-track {/*軌道*/
-    background: #303030;}
-::-webkit-scrollbar-thumb {/*滑塊*/
-    background: #888;}
-::-webkit-scrollbar-thumb:hover {/*懸停*/
-    background: #555;}
+/* 基本佈局 */
+html { height: 100%; }
+body { font-family: 'Arial', Helvetica, sans-serif; background-color: #3c3c3c; max-width: 100%; }
 
-/*global*/
-header{
-    color: #cccccc;
-    font-size: 30px;
-    font-family:'Iansui'
-}
-a {
-    text-decoration: none;
-}
-.example {
-    text-decoration: underline; 
-    font-weight: bold;
-    color: #3180ca !important;
-}
-a:visited, a:-webkit-any-link {
-    color: inherit;
-}
-.list {
-    display: flex;
-    position: absolute;
-    right: 5%;
-}
-.list-button {
-    display: inline;
-    width: 150px;
-    height: 50px;
-    background-color: #7899c977;
-    border: none;
-    border-radius: 10px;
-    color: #cccccc;
-    font-size: x-large;
-    text-align: center;
-    cursor: pointer;
-    margin:0 5px;
-}
-.list-button:hover {
-    background-color: #617da777;
-    color: rgb(225, 225, 225);
-}
-.main-content {
-    font: 15px;
-    padding:0 5%;
-    padding-bottom: 10%;
-}
-footer {
-    text-align: center;
-    color: white;
-    scale: 0.8;
-}
-@font-face {
-    font-family: 'Iansui';
-    src: url('fonts/Iansui-Regular.ttf');
-}
+/* 滾動條 */
+::-webkit-scrollbar { width: 10px; } /* 整個滾動條容器 */
+::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb { border-radius: 10px; }
+::-webkit-scrollbar-track { background: #303030; } /* 軌道 */
+::-webkit-scrollbar-thumb { background: #888; } /* 滑塊 */
+::-webkit-scrollbar-thumb:hover { background: #555; } /* 懸停 */
 
-/*article*/
-.article{
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 50px 20px;
-    justify-content: space-between;
-}
-.article-BG{
-    vertical-align: top;
-    position: relative; /* 讓覆蓋層可以定位在內部 */
-    height: 90%;
-    background-color: hsla(0, 0%, 30%, 0.8);
-    padding: 1em;
-    border-radius: 5px;
-}
-.article-title{
-    color: #cccccc;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    font-size: 28px;
-    display: block;
-    margin-bottom: 2px;
-    cursor: pointer;
-    word-wrap: break-word;
-    font-family:'Iansui';
-}
-.article-title:hover{
-    color: #bbbbbb;
-}
-.tag{
-    background-color: rgba(125, 171, 231, 0.5);
-    display: inline-block;
-    font-size: 16px;
-    color: #ffffff;
-    padding: 2px 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    line-height: 1;
-    margin-bottom: 1%;
-}
-.r18{
-    background-color: rgba(220, 94, 94, 0.5);
-    display: inline-flex;
-    font-size: 16px;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    font-weight: bold;
-    line-height: 1;
-    margin-bottom: 1%;
-}
-.item{
-    background-color: rgba(193, 193, 69, 0.5);
-    display: inline-flex;
-    font-size: 16px;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    line-height: 1;
-    margin-bottom: 1%;
-}
-.date{
-    display: inline-flex;
-    color:#cccccc;
-}
+/* global */
+header { color: #cccccc; font-size: 30px; font-family: 'Iansui'; }
+a { text-decoration: none; }
+.example { text-decoration: underline; font-weight: bold; color: #3180ca !important; }
+a:visited, a:-webkit-any-link { color: inherit; }
+.list { display: flex; position: absolute; right: 5%; }
+.list-button { display: inline; width: 150px; height: 50px; background-color: #7899c977; border: none; border-radius: 10px; color: #cccccc; font-size: x-large; text-align: center; cursor: pointer; margin: 0 5px; }
+.list-button:hover { background-color: #617da777; color: rgb(225, 225, 225); }
+.main-content { font: 15px; padding: 0 5%; padding-bottom: 10%; }
+footer { text-align: center; color: white; scale: 0.8; }
 
-/*RWD*/
-@media screen and (max-width: 1200px){
-    header{
-        font-size: 28px;
-    }
-    .article{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .article-title {
-        font-size: 22px;
-    }
+/* 字體 */
+@font-face { font-family: 'Iansui'; src: url('fonts/Iansui-Regular.ttf'); }
+
+/* article */
+.article { max-width: 100%; display: grid; grid-template-columns: repeat(5, 1fr); gap: 50px 20px; justify-content: space-between; }
+.article-BG { vertical-align: top; position: relative; height: 90%; background-color: hsla(0, 0%, 30%, 0.8); padding: 1em; border-radius: 5px; }
+.article-title { color: #cccccc; text-decoration: underline; text-underline-offset: 3px; font-size: 28px; display: block; margin-bottom: 2px; cursor: pointer; word-wrap: break-word; font-family: 'Iansui'; }
+.article-title:hover { color: #bbbbbb; }
+.tag { background-color: rgba(125, 171, 231, 0.5); display: inline-block; font-size: 16px; color: #ffffff; padding: 2px 5px; border-radius: 5px; white-space: nowrap; line-height: 1; margin-bottom: 1%; }
+.r18 { background-color: rgba(220, 94, 94, 0.5); display: inline-flex; font-size: 16px; color: white; padding: 2px 5px; border-radius: 5px; white-space: nowrap; font-weight: bold; line-height: 1; margin-bottom: 1%; }
+.item { background-color: rgba(193, 193, 69, 0.5); display: inline-flex; font-size: 16px; color: white; padding: 2px 5px; border-radius: 5px; white-space: nowrap; line-height: 1; margin-bottom: 1%; }
+.date { display: inline-flex; color: #cccccc; }
+
+/* RWD - 原本分組 */
+@media screen and (max-width: 1200px) {
+    header { font-size: 28px; }
+    .article { grid-template-columns: repeat(3, 1fr); }
+    .article-title { font-size: 22px; }
 }
 @media screen and (max-width: 700px) {
-    .main-content {
-        padding-bottom: 15%;
-    }
-    header, .article-title{
-        font-size: 20px;
-    }
-    .article{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .tag, .item, .r18{
-        font-size: 14px;
-    }
-    .list-button {
-        width: 100px;
-        height: 40px;
-        font-size: 18px;
-    }
-    .copyright {
-        font-size: 12px;
-    }
+    .main-content { padding-bottom: 15%; }
+    header, .article-title { font-size: 20px; }
+    .article { grid-template-columns: repeat(2, 1fr); }
+    .tag, .item, .r18 { font-size: 14px; }
+    .list-button { width: 100px; height: 40px; font-size: 18px; }
+    .copyright { font-size: 12px; }
 }
 @media screen and (max-width: 400px) {
-    .list-button {
-        width: 80px;
-        height: 30px;
-        font-size: 14px;
-    }
-    header {
-        font-size: 15px;
-    }
-    .copyright{
-        font-size: 12px;
-    }
+    .list-button { width: 80px; height: 30px; font-size: 14px; }
+    header { font-size: 15px; }
+    .copyright { font-size: 12px; }
 }
 
-/*委託頁*/
-.com-content h3{
-    display: inline;
-    padding: 7px;
-    font-size: 24px;
-    background-color: #10233f7c;
-    border-radius: 5px;
-    color: #cccccc;
-}
-.com-content{
-    margin-left: 5%;
-    color:#cccccc;
-    font-size: 18px;
-}
-.warn {
-    text-decoration: underline 2px;
-    text-decoration-color: #E74C3C;
-    border-radius: 2px;
-    font-weight: 600;
-}
-.advice {
-    background-color: #1777d180;
-    border-radius: 2px;
-    font-size: 16px;
-    padding: 3px;
-}
-.ps {
-    font-size: 16px;
-    color:#999999;
-}
+/* 委託頁 */
+.com-content h3 { display: inline; padding: 7px; font-size: 24px; background-color: #10233f7c; border-radius: 5px; color: #cccccc; }
+.com-content { margin-left: 5%; color: #cccccc; font-size: 18px; }
+.warn { text-decoration: underline 2px; text-decoration-color: #E74C3C; border-radius: 2px; font-weight: 600; }
+.advice { background-color: #1777d180; border-radius: 2px; font-size: 16px; padding: 3px; }
+.ps { font-size: 16px; color: #999999; }
+
 /* 櫥窗 */
-.container {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    overflow: hidden;
-    max-height: auto;
-    display: flex;
-    flex-direction: column; /* 垂直排列內容和按鈕 */
-    align-items: center;
-    padding-bottom: 40px;
-}
-  /* 由 JS 動態建立的 slider-wrapper：水平排列所有 slide */
-.slider-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-.container-item {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-.containerCtrl {
-    position: absolute;
-    bottom: 50px;                /* 將按鈕對齊容器底部 */
-    transform: translateY(100%); /* 將按鈕移出容器外部 */
-    background-color: #262626;
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-.containerCtrl:hover {
-    background-color: #000000;
-}
-.containerCtrl.prev {
-    left: 0px;
-}
-.containerCtrl.next {
-    right: 10px;
-}
-  /*排程表格*/
-table {
-    width: 50%;
-    margin: 10px;
-    border-collapse: collapse;
-    border-radius: 8px;
-}
-th, td {
-    padding: 5px 0px;
-    font-size: 15px;
-    text-align: center;
-    border: 1px solid #333;
-    width: 15%;
-}
-th {
-    background-color: #10233f7c;
-    color: white;
-}
-tr:nth-child(even) {
-    background-color: #5555557c;
-}
-tr:nth-child(odd) {
-    background-color: #6666667c;
-}
-td {
-    color: #ccc;
-}
-/*RWD2*/
-@media screen and (max-width: 1024px) {
-    table {
-        width: 100%;
-    }
-}
+.container { position: relative; width: 100%; max-width: 700px; overflow: hidden; max-height: auto; display: flex; flex-direction: column; align-items: center; padding-bottom: 40px; }
+.slider-wrapper { display: flex; transition: transform 0.5s ease-in-out; }
+.container-item { min-width: 100%; box-sizing: border-box; }
+.containerCtrl { position: absolute; bottom: 50px; transform: translateY(100%); background-color: #262626; color: #ffffff; border: none; padding: 10px; cursor: pointer; font-size: 18px; }
+.containerCtrl:hover { background-color: #000000; }
+.containerCtrl.prev { left: 0px; }
+.containerCtrl.next { right: 10px; }
+
+/* 排程表格 */
+table { width: 50%; margin: 10px; border-collapse: collapse; border-radius: 8px; }
+th, td { padding: 5px 0px; font-size: 15px; text-align: center; border: 1px solid #333; width: 15%; }
+th { background-color: #10233f7c; color: white; }
+tr:nth-child(even) { background-color: #5555557c; }
+tr:nth-child(odd) { background-color: #6666667c; }
+td { color: #ccc; }
+
+/* RWD2 */
+@media screen and (max-width: 1024px) { table { width: 100%; } }
 @media screen and (max-width: 768px) {
-    .container {
-        max-width: 100%;
-      }    
-      .container-item {
-        padding: 0 1px;
-        overflow-wrap: anywhere; 
-      }
+    .container { max-width: 100%; }
+    .container-item { padding: 0 1px; overflow-wrap: anywhere; }
 }

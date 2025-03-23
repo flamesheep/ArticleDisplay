@@ -1,106 +1,40 @@
-html{
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out;
-}
-body{
-    font-size: 18px;
-    font-family: 'Iansui', 'Arial', Helvetica,sans-serif;
-    background-color:#3c3c3c;
-    height: 100%;
-    max-width: 100%;
-    color: #cccccc;
-}
-@font-face {
-    font-family: 'Iansui';
-    src: url('../fonts/Iansui-Regular.ttf');
-}
-a {
-    text-decoration: none;
-    color: #cccccc;
-}
-a:visited, a:-webkit-any-link {
-    color: inherit;
-}
-.content{
-    padding: 0 25%;
-}
-/* 整個滾動條的容器 */
-::-webkit-scrollbar {
-    width: 10px; /* 垂直滾動條的寬度 */
-}
-/* 滾動條的軌道（背景） */
-::-webkit-scrollbar-track {
-    background: #303030; /* 軌道背景顏色 */
-    border-radius: 10px; /* 圓角 */
-}
-/* 滾動條的滑塊（可拖動的部分） */
-::-webkit-scrollbar-thumb {
-    background: #888; /* 滑塊顏色 */
-    border-radius: 10px; /* 圓角 */
-}
-/* 滑塊懸停時的樣式 */
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* 滑塊懸停顏色 */
-}
-h1{
-    font-size: 40px;
-    margin-bottom: 0;
-}
-.tag{
-    background-color: rgba(84, 123, 174, 0.5);
-    display: inline;
-    font-size: 15px;
-    color: #ffffff;
-    padding: 0px 5px;
-    border-radius: 5px;
-}
-.ad{
-    font-size: 15px;
-    color: #dddddd;
-    font-family: DFKai-sb;
-}
-.home {
-    width: 50px;
-    height: 50px;
-    padding-left: 12px;
-    margin-left: 2%;
-    background-color: #77777777;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: x-large;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    transform-origin: left center;
-    z-index: 1080 !important;
-    position: fixed;
-}
-.home:hover {
-    width: 100px;
-}
-.text{
-    opacity: 0;
-    font-size: 16px;
-}
-.home:hover .text{
-    opacity: 1;
-}
+/* 全局設置 */
+html { visibility: hidden; transition: opacity 0.3s ease-in-out; }
+body { font-size: 18px; font-family: 'Iansui', 'Arial', Helvetica, sans-serif; background-color: #3c3c3c; height: 100%; max-width: 100%; color: #cccccc; }
 
-/*RWD*/
-@media screen and (max-width: 700px){
-    .content{
-        padding: 5px 7%;
-    }
-    .home{
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-    }
-    .text{
-        font-size: 12px;
-    }
-    .home:hover {
-        width: auto;
-    }
+/* 字體設置 */
+@font-face { font-family: 'Iansui'; src: url('../fonts/Iansui-Regular.ttf'); }
+
+/* 鏈接樣式 */
+a { text-decoration: none; color: #cccccc; }
+a:visited, a:-webkit-any-link { color: inherit; }
+
+/* 主要內容區域 */
+.content { padding: 0 25%; }
+
+/* 滾動條樣式 */
+::-webkit-scrollbar { width: 10px; } /* 垂直滾動條寬度 */
+::-webkit-scrollbar-track { background: #303030; border-radius: 10px; } /* 軌道背景 */
+::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; } /* 滑塊 */
+::-webkit-scrollbar-thumb:hover { background: #555; } /* 滑塊懸停 */
+
+/* 標題與標籤 */
+h1 { font-size: 40px; margin-bottom: 0; }
+.tag { background-color: rgba(84, 123, 174, 0.5); display: inline; font-size: 15px; color: #ffffff; padding: 0px 5px; border-radius: 5px; }
+
+/* 廣告文字 */
+.ad { font-size: 15px; color: #dddddd; font-family: DFKai-sb; }
+
+/* 返回首頁按鈕 */
+.home { width: 50px; height: 50px; padding-left: 12px; margin-left: 2%; background-color: #77777777; color: white; border: none; border-radius: 5px; font-size: x-large; white-space: nowrap; overflow: hidden; cursor: pointer; transform-origin: left center; z-index: 1080 !important; position: fixed; }
+.home:hover { width: 100px; }
+.text { opacity: 0; font-size: 16px; }
+.home:hover .text { opacity: 1; }
+
+/* 響應式佈局 (RWD) */
+@media screen and (max-width: 700px) {
+    .content { padding: 5px 7%; }
+    .home { width: 35px; height: 35px; font-size: 12px; }
+    .text { font-size: 12px; }
+    .home:hover { width: auto; }
 }
