@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const articleContainer = document.querySelector('.article');
   if (articleContainer) {
     articleContainer.innerHTML = '';
-    fetch('catalog.json')
+    fetch('catalog_clean.json')
       .then(response => response.json())
       .then(data => {
         data.forEach(article => {
