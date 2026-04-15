@@ -1,23 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // 共用函式：根據標題打開對應文章
-  const openArticle = (title) => {
-    const fileName = title.trim() + '.json';
-    const templateUrl = `Articles/template.html?file=${encodeURIComponent(fileName)}`;
-    window.open(templateUrl, '_blank');
-  };
-
-  // 處理頁面中已有的文章標題（若有的話）
-  document.querySelectorAll('.article-title').forEach(button => {
-    button.addEventListener('click', () => {
-      openArticle(button.textContent);
-    });
-  });
-
-  // 目錄部分：獲取並動態生成文章列表
-  const articleContainer = document.querySelector('.article');
+const articleContainer = document.querySelector('.article');
   if (articleContainer) {
     articleContainer.innerHTML = '';
-    fetch('catalog.json')
+    fetch('catalog_clean.json')
       .then(response => response.json())
       .then(data => {
         data.forEach(article => {
@@ -80,4 +64,3 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Error loading the articles:', error));
   }
-});
